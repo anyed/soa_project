@@ -1,0 +1,17 @@
+  server:
+    port: 9191
+  spring:
+    application:
+      name: API-GATEWAY
+    cloud:
+      gateway:
+        routes:
+          - id: studentSERVICE
+            uri: lb://studentSERVICE
+            predicates:
+            - Path= /students/**
+  eureka:
+    client:
+      register-with-eureka: true
+      fetch-registry: true
+
