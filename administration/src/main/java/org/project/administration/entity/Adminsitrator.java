@@ -1,18 +1,27 @@
-package entity;
+package org.project.administration.entity;
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
-
-public class Administrateur {
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class Adminsitrator {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         private long prof_id;
         @NotNull
-        private long cin;
+        private long CIN;
         @NotNull
         private String fullName;
         @NotNull
@@ -30,4 +39,5 @@ public class Administrateur {
         @NotNull
         private String poste;
 
-}
+    }
+

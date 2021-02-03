@@ -14,6 +14,10 @@
             uri: lb://teacherSERVICE
             predicates:
               - Path= /enseignant/**
+          - id: administrationSERVICE
+            uri: lb://administrationSERVICE
+            predicates:
+              - Path= /administrator/**
   eureka:
     client:
       register-with-eureka: true
