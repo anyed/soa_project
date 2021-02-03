@@ -9,7 +9,11 @@
           - id: studentSERVICE
             uri: lb://studentSERVICE
             predicates:
-            - Path= /students/**
+              - Path= /students/**
+          - id: teacherSERVICE
+            uri: lb://teacherSERVICE
+            predicates:
+              - Path= /enseignant/**
   eureka:
     client:
       register-with-eureka: true

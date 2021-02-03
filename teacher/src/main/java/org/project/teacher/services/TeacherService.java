@@ -1,6 +1,6 @@
-package services;
+package org.project.teacher.services;
 
-import entity.Enseignant;
+import org.project.teacher.entity.Enseignant;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

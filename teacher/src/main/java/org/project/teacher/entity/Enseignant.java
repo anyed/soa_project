@@ -1,4 +1,4 @@
-package entity;
+package org.project.teacher.entity;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;

@@ -32,5 +32,5 @@ public class Student {
     private Date InscriptionDate;
     private String Level;
     private String Degree;
-    private String Result;
+    private String result;
 }

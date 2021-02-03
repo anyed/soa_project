@@ -1,6 +1,6 @@
-package repository;
+package org.project.teacher.repository;
 
-import entity.Enseignant;
+import org.project.teacher.entity.Enseignant;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TeacherRepo extends JpaRepository<Enseignant, Long> {

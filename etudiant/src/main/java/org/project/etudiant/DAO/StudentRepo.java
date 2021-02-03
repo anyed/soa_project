@@ -11,4 +11,5 @@ public interface StudentRepo extends JpaRepository<Student, Long> {
     Student findStudentByCIN(Long CIN);
 
     Student findStudentByFullName(String FullName);
+    Long countAllByResult(String Result);
 }

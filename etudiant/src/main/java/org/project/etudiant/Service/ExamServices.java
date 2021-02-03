@@ -15,4 +15,5 @@ public interface ExamServices {
     void updateExamInfo(Exam exam);
     Integer getExamResultByCIN(Long CIN, Long examID);
     Exam addNewExam(Exam exam);
+
 }

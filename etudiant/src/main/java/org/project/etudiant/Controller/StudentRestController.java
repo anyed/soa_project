@@ -58,4 +58,9 @@ public class StudentRestController {
         studentServices.updateStudentInfo(etud);
     }
 
+    @GetMapping("/getSuccessRate")
+    public double getSuccessRate(){
+        return studentServices.getTauxReussite();
+    }
+
 }

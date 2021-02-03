@@ -9,6 +9,5 @@ import java.util.Date;
 @RepositoryRestController
 public interface ExamRepo extends JpaRepository<Exam, Long> {
     void deleteExamBySubjectAndExamDate(String Subject, Date date);
-
     Exam findExamByCinStudent(Long CIN);
 }

@@ -1,10 +1,10 @@
-package controller;
+package org.project.teacher.controller;
 
-import entity.Enseignant;
+import org.project.teacher.entity.Enseignant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
-import services.TeacherService;
+import org.project.teacher.services.TeacherService;
 
 import java.util.List;
 @CrossOrigin("*")
@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/enseignant")
 public class TeacherRestController {
     @Autowired
-    TeacherService teacherService;
+    public TeacherService teacherService;
 
     @PostMapping("/addNewEnseignant")
     public Enseignant addEnseignant(@RequestBody Enseignant enseignant) {

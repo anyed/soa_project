@@ -41,5 +41,14 @@ studentRepo.deleteStudentByCIN(CIN);
 
     }
 
+    @Override
+    public double getTauxReussite() {
+        Long successful = studentRepo.countAllByResult("succes");
+        double All = studentRepo.count();
+        System.out.println("successful : "+successful+" ; All :"+All);
+        if (All != 0) {return ((double) successful)/All;}
+        else return -1;
+    }
+
 
 }
