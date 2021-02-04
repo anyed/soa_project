@@ -1,5 +1,7 @@
 package org.project.etudiant.Controller;
 
+import net.minidev.json.JSONObject;
+import org.project.etudiant.DAO.ExamRepo;
 import org.project.etudiant.DAO.StudentRepo;
 import org.project.etudiant.Service.StudentServices;
 import org.project.etudiant.entity.Student;
@@ -7,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin("*")
 @RefreshScope
@@ -16,6 +20,9 @@ import java.util.List;
 public class StudentRestController {
     @Autowired
     private StudentRepo studentRepo;
+
+    @Autowired
+    private ExamRepo examRepo;
 
     @Autowired
     private StudentServices studentServices;
@@ -43,8 +50,9 @@ public class StudentRestController {
     }
 
     @GetMapping("/getAllStudents")
+    @ResponseBody
     public List<Student> getAllStudents() {
-        System.out.println("in getAllStudents");
+        System.out.println("in get all students");
         return studentServices.getAllStudents();
     }
 
@@ -63,4 +71,14 @@ public class StudentRestController {
         return studentServices.getTauxReussite();
     }
 
+    @GetMapping("/stats")
+    public Map<String, Integer> getStats(){
+        Integer nbStudents = Math.toIntExact(studentRepo.count());
+        Integer nbExams = Math.toIntExact(examRepo.count());
+        System.out.println("nbStudents : "+nbStudents+" ; nbExams :"+nbExams);
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("nbStudents", nbStudents);
+        map.put("nbExams", nbExams);
+        return map;
+    }
 }
